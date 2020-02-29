@@ -95,21 +95,21 @@ app.get('/editar/:id', async (req,res) => {
     res.render('formulario', {datos: artista})
 })
 
-app.post('/editar/:id', async (req,res)=> {
-
+app.post('/editar/:id', async (req,res) => {
     if(req.body.nombre == ''){
-        res.render('formulario',{
+        res.render('formulario', {
          error: 'El nombre es obligatorio',
-         datos: {
+         datos:{
              nombre: req.body.nombre,
              apellido: req.body.apellido
          }
          
-        })
+        });
+        return;
+
     }
     await ArtistaModel.findByIdAndUpdate(
     {_id: req.params.id},
-
     {
      nombre: req.body.nombre,
      apellido: req.body.apellido
