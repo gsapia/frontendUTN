@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<body>
+    <h1>Formulario alta</h1>
+    
+    {{#if error}}
+
+    <div class="alert alert-danger" role="alert">
+         {{error}}
+    </div>
+    
+    {{/if}}
+
+    <div class="container">
+        
+    
+     <form action="/procesar_alta" method="post">
+
+     <label for="nombre">Nombre</label>
+     <input type="text" name="nombre" id="nombre" value="{{datos.nombre}}">
+     <br>
+     <input type="checkbox" name="realizada" id="realizada">
+     <label for="realizada">Realizada</label>
+     <br>
+     <button type="submit">Guardar</button>
+
+     </form>
+    </div>
+
+</body>
+</html>

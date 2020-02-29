@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    
+    <div class="container">
+        <form action="/contacto" method="POST">
+
+        <div>
+            <label for="name" required>Name</label>
+            <input type="text" placeholder="enter your name" id="name" name="name">
+        </div>    
+        <div>
+            <label for="mail">E-mail</label>
+            <input type="text" placeholder="enter your mail" id="mail" name="mail">
+        </div>
+        <div>
+            <label for="phone">Phone</label>
+            <input type="text" placeholder="Enter your phone number" id="phone" name="phone">
+        </div>
+        <div class="col s-7">
+            <label for="message">Message</label>
+            <input type="text" placeholder="Enter a message" id="message" name="message">
+        </div>
+            
+        <button class="waves-effect waves-light btn">Send</button>
+
+        </form>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
