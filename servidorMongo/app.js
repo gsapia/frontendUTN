@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const hbs = require('express-handlebars');
 const session = require('express-session');
+const cors = require('cors')
 
 
 //Settings
@@ -14,7 +15,7 @@ app.set('view engine', 'handlebars');
 app.use(session({ secret: '"·$&/&·$TG$·DHD' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); //convierte de json a body
-
+app.use(cors());
 
 async function conectar() {
     await mongoose.connect(
@@ -50,10 +51,10 @@ mongoose.connect(
 })
 */
 app.get('/listado', async function (req, res) {
-    if (!req.session.user_id) {
+    /*if (!req.session.user_id) {
         res.redirect('/login');
         return;
-    }
+    }*/
     var list = await ArtistaModel.find().lean();
     res.render('listado', { listado: list });
 });
@@ -250,6 +251,6 @@ app.delete('api/artistas/:id', async (req, res) => {
     }
 });
 
-app.listen(80, function () {
+app.listen(3000, function () {
     console.log('App en localhost');
 });

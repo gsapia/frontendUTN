@@ -1,0 +1,20 @@
+<h2>Listado de sentimientos</h2>
+
+<a href="/alta" class="btn btn-primary">Nuevo estado de ánimo</a>
+<table class="table">
+    <tr>
+        <th>Estado de ánimo</th>
+        <th>Detalle</th>
+        
+    </tr>
+ 
+    {{#each listado}}
+    <tr>
+        <td> {{this.estado}} </td>
+        <td> {{this.detalle}} </td>
+        <td><a href="/borrar/{{this._id}}"> Borrar </a> 
+            <a href="/editarEstado/{{this._id}}"> Editar </a> 
+        </td>
+    </tr>
+    {{/each}}
+</table>

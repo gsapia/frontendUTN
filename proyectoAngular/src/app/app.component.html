@@ -1,0 +1,15 @@
+
+<span>{{ title }} app is running!</span>
+<h1>hola</h1>
+<h2>{{nombre}}</h2>
+<br>
+<h3>{{apellido}}</h3>
+<button (click)="hizoClick()">click me!</button>
+
+<app-nuevo-componente></app-nuevo-componente>
+
+<input type="text" name="nombre" [(ngModel)]="nombre" placeholder="Nombre">
+<br>
+<input type="text" name="apellido" [(ngModel)]="apellido" placeholder="Apellido">
+<br>
+ <button (click)="guardar()">guardar</button>
