@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpHeaders, HttpClient } from'@angular/common/http';
 
 @Component({
   selector: 'app-nuevo-componente',
@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nuevo-componente.component.css']
 })
 export class NuevoComponenteComponent implements OnInit {
+   
+  listado:any =  [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
+
+  async ngOnInit() {
+    this.listado = await this.http.get('http://10.128.35.136:3000/api/artistas').toPromise();
   }
 
 }

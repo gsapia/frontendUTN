@@ -42,15 +42,20 @@ app.get('/agregarEstado', (req, res) => {
 });
 
 //Creando nuevo estado
-app.post('/agregarEstado', async (req, res) => {
+app.post('/agregarEstado', async (req, res) =>{
+   /* if(req.body.detalle == ''){
+        res.redirect('/agregarEstado');
+    }*/
+    if(req.body.detalle == ''){
+        res.render('formulario', {
+            error: 'El campo detalle no puede estar vacio'}
+        )}return;
     var nuevoEstado = await EstadoModel.create(
-
         {
             estado: req.body.estado,
             detalle: req.body.detalle
         }
     );
-
     res.redirect('/listado');
 });
 
